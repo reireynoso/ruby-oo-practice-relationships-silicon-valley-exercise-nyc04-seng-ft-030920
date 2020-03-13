@@ -70,12 +70,14 @@ class Startup
     def total_funds 
         # num_funding_rounds => array of FR
         # 
-        total = 0
-        num_funding_rounds.map do |fr|
-            total += fr.investment
+        # total = 0
+        # num_funding_rounds.map do |fr|
+        #     total += fr.investment
+        # end
+        # total
+        total = num_funding_rounds.sum do |fr|
+            fr.investment
         end
-        total
-        # binding.pry
     end
 
     def investors
